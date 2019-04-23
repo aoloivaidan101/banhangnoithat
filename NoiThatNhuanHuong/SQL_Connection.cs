@@ -8,9 +8,9 @@ namespace NoiThatNhuanHuong
 {
     class SQL_Connection
     {   // phuong
-      //  public static string _SQL = @"Data Source=DESKTOP-QUTVSOP\SQLEXPRESS;Initial Catalog=BanHangNoiThat;Integrated Security=True";
+        public static string _SQL = @"Data Source=DESKTOP-QUTVSOP\SQLEXPRESS;Initial Catalog=BanHangNoiThat;Integrated Security=True";
 
             // hanh
-        public static string _SQL = @"Data Source=DESKTOP-2BQ47S8\SQLEXPRESS;Initial Catalog=BanHangNoiThat;Integrated Security=True";
+       // public static string _SQL = @"Data Source=DESKTOP-2BQ47S8\SQLEXPRESS;Initial Catalog=BanHangNoiThat;Integrated Security=True";
     }
 }

@@ -49,8 +49,8 @@ namespace NoiThatNhuanHuong.UserControls.KhoHang.Form_Phieu
             cbbNCC.Text = "";
             cbbNhanVien.Text = "";
             cbbSanPham.Text = "";
-            nmrSoLuong.Text = "";
-            txtDonGia.Text = "";
+            nmrSoLuong.Text = "";  ///////////////
+            txtDonGia.Text = "";   ///////////////
             txtThanhTien.Text = "";
             txtTongTien.Text = "";
             txtDaThanhToan.Text = "";
@@ -66,6 +66,8 @@ namespace NoiThatNhuanHuong.UserControls.KhoHang.Form_Phieu
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             reset();
+            cbbNCC.Enabled = true;
+            cbbSanPham.Enabled = false;
         }
 
        
@@ -81,12 +83,12 @@ namespace NoiThatNhuanHuong.UserControls.KhoHang.Form_Phieu
 
         private void cbbNCC_SelectedValueChanged(object sender, EventArgs e)
         {
-            cbbSanPham.ResetText();
+          /*  cbbSanPham.ResetText();
             txtDonGia.Text = "";
             DataTable temp = SQL_ThongTin.Display_SanPham_Find(cbbNCC.SelectedValue.ToString());
             cbbSanPham.DataSource = temp;
             cbbSanPham.DisplayMember = "Tên Sản Phẩm";
-            cbbSanPham.ValueMember = "Mã Sản Phẩm";
+            cbbSanPham.ValueMember = "Mã Sản Phẩm";*/
         }
 
         private void nmrSoLuong_ValueChanged(object sender, EventArgs e)
@@ -102,7 +104,16 @@ namespace NoiThatNhuanHuong.UserControls.KhoHang.Form_Phieu
                 txtThanhTien.Text = "";
         }
         int stt = 1;
-        int tongtien = 0;
+        void TongTien()
+        {
+            int tongtien = 0;
+            for (int i = 0; i < listView1.Items.Count; i++)
+            {
+                tongtien = tongtien + int.Parse(listView1.Items[i].SubItems[5].Text);
+            }
+            txtTongTien.Text = tongtien.ToString();
+        }
+        int thanhtien = 0;
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -117,42 +128,41 @@ namespace NoiThatNhuanHuong.UserControls.KhoHang.Form_Phieu
                 /// nếu trùng sản phảm thì cập nhật cho  số lượng
                 for (int i = 0; i < listView1.Items.Count; i++)
                 {
-                    if (cbbSanPham.SelectedValue.ToString() == listView1.Items[0].SubItems[1].Text)
+                    if (cbbSanPham.SelectedValue.ToString() == listView1.Items[i].SubItems[1].Text)
                     {
                         // số lượng
                         int soluongcu = int.Parse(listView1.Items[i].SubItems[3].Text);
                         int soluongmoi = int.Parse(nmrSoLuong.Value.ToString());
                         listView1.Items[i].SubItems[3].Text = (soluongcu + soluongmoi).ToString();
                         // tính tổng tiền
-                        tongtien = tongtien + int.Parse(txtThanhTien.Text);
-                        txtTongTien.Text = tongtien.ToString();
                         // thành tiền = số luong * đơn giá
                         int soluong = int.Parse(listView1.Items[i].SubItems[3].Text);
-                        listView1.Items[0].SubItems[5].Text = (soluong * int.Parse(txtDonGia.Text)).ToString();
+                        listView1.Items[i].SubItems[5].Text = (soluong * int.Parse(txtDonGia.Text)).ToString();
+                        TongTien();
                         ///
-                        stt++;
+                    //    stt++;
                         cbbNCC.Enabled = false;
                         return;
                     }
                 }
+                /// Nếu không trùng thì thêm  dòng mới
+                ///add vào listview     
+                ListViewItem dong = new ListViewItem((stt).ToString());
+                dong.SubItems.Add(cbbSanPham.SelectedValue.ToString());
+                dong.SubItems.Add(cbbSanPham.Text);
+                dong.SubItems.Add(nmrSoLuong.Value.ToString());
+                dong.SubItems.Add(txtDonGia.Text);
+                dong.SubItems.Add(txtThanhTien.Text);
+                listView1.Items.Add(dong);
+                // tính tổng tiền
+                TongTien();
+                stt++;
+                cbbNCC.Enabled = false;
+
             }
-            /// Nếu không trùng thì thêm  dòng mới
-            ///add vào listview     
-                   ListViewItem dong = new ListViewItem((stt).ToString());
-                   dong.SubItems.Add(cbbSanPham.SelectedValue.ToString());
-                   dong.SubItems.Add(cbbSanPham.Text);
-                   dong.SubItems.Add(nmrSoLuong.Value.ToString());
-                   dong.SubItems.Add(txtDonGia.Text);
-                   dong.SubItems.Add(txtThanhTien.Text);
-                   listView1.Items.Add(dong);
-                    // tính tổng tiền
-                    tongtien = tongtien + int.Parse(txtThanhTien.Text);
-                    txtTongTien.Text = tongtien.ToString();
-                    stt++;  
-                    cbbNCC.Enabled = false;
-            
-            
+          
         }
+       
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -163,8 +173,7 @@ namespace NoiThatNhuanHuong.UserControls.KhoHang.Form_Phieu
                     listView1.Items.RemoveAt(i);    // xóa tại dòng được chọn
                     stt--;
                     // tính tổng tiền
-                    tongtien = tongtien - thanhtien;
-                    txtTongTien.Text = tongtien.ToString();
+                    TongTien();
                     // đẩy STT lên
                     for (int j = i;j<listView1.Items.Count;j++)
                     {
@@ -174,12 +183,7 @@ namespace NoiThatNhuanHuong.UserControls.KhoHang.Form_Phieu
             }
             
         }
-        int thanhtien;
-        private void listView1_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
-        {
-            var item = e.Item;
-            thanhtien = int.Parse(item.SubItems[5].Text);
-        }
+
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -202,10 +206,32 @@ namespace NoiThatNhuanHuong.UserControls.KhoHang.Form_Phieu
                 /// add bảng listview Chi tiết phiếu nhập vào SQL
                 for (int i = 0; i < listView1.Items.Count; i++)
                 {
-                    SQL_KhoHang.Add_ChiTietNhapHang(Temp_PhieuNhapHang, listView1.Items[i].SubItems[1].Text, int.Parse(listView1.Items[i].SubItems[3].Text), decimal.Parse(listView1.Items[i].SubItems[5].Text));
+                    SQL_KhoHang.Add_ChiTietNhapHang(Temp_PhieuNhapHang, listView1.Items[i].SubItems[1].Text, int.Parse(listView1.Items[i].SubItems[3].Text), decimal.Parse(listView1.Items[i].SubItems[5].Text));                 
                 }
+                MessageBox.Show("Thêm Hóa đơn thành công.");
                 reset();
             }
         }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            foreach (ListViewItem items in listView1.SelectedItems)
+            {
+                MessageBox.Show(items.SubItems[1].Text);
+               
+            }
+        }
+
+        private void cbbNCC_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbbSanPham.Enabled = true;
+            cbbSanPham.ResetText();
+            txtDonGia.Text = "";
+            DataTable temp = SQL_ThongTin.Display_SanPham_Find(cbbNCC.SelectedValue.ToString());
+            cbbSanPham.DataSource = temp;
+            cbbSanPham.DisplayMember = "Tên Sản Phẩm";
+            cbbSanPham.ValueMember = "Mã Sản Phẩm";
+        }
     }
 }
+/// chưa fix xong khởi tạo load form cho tô thành tiên , đơn giá =0

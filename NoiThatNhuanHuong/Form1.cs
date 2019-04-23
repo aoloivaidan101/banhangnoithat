@@ -301,5 +301,55 @@ namespace NoiThatNhuanHuong
                 xtabHienThi.SelectedTabPage = tabnhapkho;
             }
         }
+
+        private void btnHoaDonBanHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            UserControls.BanHang.UCBanHang banhang = new UserControls.BanHang.UCBanHang();
+            DevExpress.XtraTab.XtraTabPage tabbanhang = new DevExpress.XtraTab.XtraTabPage();
+            tabbanhang.Name = "tabBanHang";
+            tabbanhang.Text = "Hóa Đơn";
+            tabbanhang.Controls.Add(banhang);
+            banhang.Dock = DockStyle.Fill;
+            int t = 0;
+            foreach (DevExpress.XtraTab.XtraTabPage tab in xtabHienThi.TabPages)
+            {
+                if (tab.Text == "Hóa Đơn")
+                {
+                    xtabHienThi.SelectedTabPage = tab;
+                    t = 1;
+                }
+            }
+            if (t == 1) { }
+            else
+            {
+                xtabHienThi.TabPages.Add(tabbanhang);
+                xtabHienThi.SelectedTabPage = tabbanhang;
+            }
+        }
+
+        private void btnDanhSachHoaDon_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            UserControls.BanHang.UCDanhSachHoaDon List_HoaDon = new UserControls.BanHang.UCDanhSachHoaDon();
+            DevExpress.XtraTab.XtraTabPage tablisthoadon= new DevExpress.XtraTab.XtraTabPage();
+            tablisthoadon.Name = "tabDánhachhoadon";
+            tablisthoadon.Text = "Danh Sách Hóa Đơn";
+            tablisthoadon.Controls.Add(List_HoaDon);
+            List_HoaDon.Dock = DockStyle.Fill;
+            int t = 0;
+            foreach (DevExpress.XtraTab.XtraTabPage tab in xtabHienThi.TabPages)
+            {
+                if (tab.Text == "Danh Sách Hóa Đơn")
+                {
+                    xtabHienThi.SelectedTabPage = tab;
+                    t = 1;
+                }
+            }
+            if (t == 1) { }
+            else
+            {
+                xtabHienThi.TabPages.Add(tablisthoadon);
+                xtabHienThi.SelectedTabPage = tablisthoadon;
+            }
+        }
     }
 }

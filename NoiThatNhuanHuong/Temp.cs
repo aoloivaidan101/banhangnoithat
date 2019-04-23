@@ -9,5 +9,6 @@ namespace NoiThatNhuanHuong
     class Temp
     {
         public static string Temp_PhieuNhapHangID;
+        public static string Temp_HoaDonID;
     }
 }

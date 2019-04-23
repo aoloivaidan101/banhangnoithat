@@ -102,6 +102,24 @@
     <Compile Include="SQL_HeThong.cs" />
     <Compile Include="SQL_ThongTin.cs" />
     <Compile Include="Temp.cs" />
+    <Compile Include="UserControls\BanHang\Form_ChiTietHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\BanHang\Form_ChiTietHoaDon.Designer.cs">
+      <DependentUpon>Form_ChiTietHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\BanHang\UCBanHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\BanHang\UCBanHang.Designer.cs">
+      <DependentUpon>UCBanHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\BanHang\UCDanhSachHoaDon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\BanHang\UCDanhSachHoaDon.Designer.cs">
+      <DependentUpon>UCDanhSachHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\HeThong\UCNguoiDung.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -209,6 +227,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserControls\BanHang\Form_ChiTietHoaDon.resx">
+      <DependentUpon>Form_ChiTietHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\BanHang\UCBanHang.resx">
+      <DependentUpon>UCBanHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\BanHang\UCDanhSachHoaDon.resx">
+      <DependentUpon>UCDanhSachHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\DanhMuc\UCChucVu.resx">
       <DependentUpon>UCChucVu.cs</DependentUpon>
     </EmbeddedResource>
@@ -269,7 +296,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="UserControls\BanHang\" />
     <Folder Include="UserControls\BaoCaoThongKe\" />
     <Folder Include="UserControls\CongNo\" />
   </ItemGroup>

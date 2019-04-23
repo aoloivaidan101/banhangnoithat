@@ -122,7 +122,7 @@ namespace NoiThatNhuanHuong.UserControls.HeThong
         private void btnSave_Click(object sender, EventArgs e)
         {
             errorProvider1.Clear();
-            if (txtMaNguoiDung.Text == "" || txtHoTen.Text==""||txtTenDangNhap.Text==""|| txtMatKhau.Text == "")
+            if (txtHoTen.Text==""||txtTenDangNhap.Text==""|| txtMatKhau.Text == "")
             {
                 MessageBox.Show("Dữ liệu chưa đủ.", "Thông Báo");
                 // bắt lỗi

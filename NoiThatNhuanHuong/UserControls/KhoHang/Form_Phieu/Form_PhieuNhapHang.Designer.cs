@@ -177,6 +177,7 @@
             this.cbbNCC.Name = "cbbNCC";
             this.cbbNCC.Size = new System.Drawing.Size(187, 21);
             this.cbbNCC.TabIndex = 5;
+            this.cbbNCC.SelectedIndexChanged += new System.EventHandler(this.cbbNCC_SelectedIndexChanged);
             this.cbbNCC.SelectedValueChanged += new System.EventHandler(this.cbbNCC_SelectedValueChanged);
             // 
             // cbbNhanVien
@@ -383,7 +384,7 @@
             this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listView1_ItemSelectionChanged);
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // columnHeader1
             // 

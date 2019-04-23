@@ -78,7 +78,6 @@
             this.ribbonPageGroup19 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -151,7 +150,6 @@
             this.barButtonItem2,
             this.barButtonItem3});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ribbonControl1.MaxItemId = 46;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -163,7 +161,7 @@
             this.ribbonPage6,
             this.ribbonPage7});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010;
-            this.ribbonControl1.Size = new System.Drawing.Size(1808, 179);
+            this.ribbonControl1.Size = new System.Drawing.Size(1325, 143);
             // 
             // btnNguoiDung
             // 
@@ -215,6 +213,7 @@
             this.btnHoaDonBanHang.Name = "btnHoaDonBanHang";
             this.btnHoaDonBanHang.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnHoaDonBanHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHoaDonBanHang_ItemClick);
             // 
             // btnDanhSachHoaDon
             // 
@@ -224,6 +223,7 @@
             this.btnDanhSachHoaDon.Name = "btnDanhSachHoaDon";
             this.btnDanhSachHoaDon.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnDanhSachHoaDon.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDanhSachHoaDon_ItemClick);
             // 
             // btnKho
             // 
@@ -553,8 +553,7 @@
             // ribbonPage2
             // 
             this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup2,
-            this.ribbonPageGroup10});
+            this.ribbonPageGroup2});
             this.ribbonPage2.Name = "ribbonPage2";
             this.ribbonPage2.Text = "Bán Hàng";
             // 
@@ -565,13 +564,6 @@
             this.ribbonPageGroup2.ItemLinks.Add(this.btnDanhSachHoaDon);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Hóa Đơn";
-            // 
-            // ribbonPageGroup10
-            // 
-            this.ribbonPageGroup10.AllowTextClipping = false;
-            this.ribbonPageGroup10.ItemLinks.Add(this.btnKho);
-            this.ribbonPageGroup10.Name = "ribbonPageGroup10";
-            this.ribbonPageGroup10.Text = "Kho";
             // 
             // ribbonPage3
             // 
@@ -695,10 +687,9 @@
             // 
             this.xtabHienThi.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InActiveTabPageHeaderAndOnMouseHover;
             this.xtabHienThi.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtabHienThi.Location = new System.Drawing.Point(0, 179);
-            this.xtabHienThi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.xtabHienThi.Location = new System.Drawing.Point(0, 143);
             this.xtabHienThi.Name = "xtabHienThi";
-            this.xtabHienThi.Size = new System.Drawing.Size(1808, 845);
+            this.xtabHienThi.Size = new System.Drawing.Size(1325, 571);
             this.xtabHienThi.TabIndex = 1;
             this.xtabHienThi.CloseButtonClick += new System.EventHandler(this.xtabHienThi_CloseButtonClick);
             // 
@@ -722,12 +713,11 @@
             // Form1
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1808, 1024);
+            this.ClientSize = new System.Drawing.Size(1325, 714);
             this.Controls.Add(this.xtabHienThi);
             this.Controls.Add(this.ribbonControl1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.Ribbon = this.ribbonControl1;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -770,7 +760,6 @@
         private DevExpress.XtraBars.BarButtonItem btnPhieuNhapKho;
         private DevExpress.XtraBars.BarButtonItem btnPhieuXuuatKho;
         private DevExpress.XtraBars.BarButtonItem btnTonKho;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
         private DevExpress.XtraTab.XtraTabControl xtabHienThi;
         private DevExpress.XtraBars.BarButtonItem btnDonHangCu;
