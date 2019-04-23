@@ -168,13 +168,13 @@ namespace NoiThatNhuanHuong.UserControls.ThongTin
             {
                 MessageBox.Show("Dữ liệu chưa đủ.", "Thông Báo");
                 // bắt lỗi
-                errorProvider1.SetError(txtMaNV, "Chưa điền mã nhân viên");
-                errorProvider1.SetError(txtTenNV, "Chưa điền tên nhân viên");       
+                if (txtMaNV.Text == "") errorProvider1.SetError(txtMaNV, "Chưa điền mã nhân viên");
+                if (txtTenNV.Text == "") errorProvider1.SetError(txtTenNV, "Chưa điền tên nhân viên");
                 if (rdoNam.Checked == false && rdoNu.Checked == false)
                     errorProvider1.SetError(rdoNu, "Chưa chọn giới tính");
-                errorProvider1.SetError(txtSDT, "Chưa điền SĐT");
-                errorProvider1.SetError(txtDiaChi, "Chưa điền địa chỉ");
-                errorProvider1.SetError(txtEmail, "Chưa điền Email");
+                if (txtSDT.Text == "") errorProvider1.SetError(txtSDT, "Chưa điền SĐT");
+                if (txtDiaChi.Text == "") errorProvider1.SetError(txtDiaChi, "Chưa điền địa chỉ");
+                if (txtEmail.Text == "") errorProvider1.SetError(txtEmail, "Chưa điền Email");
             }
             else
             {

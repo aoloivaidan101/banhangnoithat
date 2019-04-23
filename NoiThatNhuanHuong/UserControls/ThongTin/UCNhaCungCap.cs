@@ -141,11 +141,11 @@ namespace NoiThatNhuanHuong.UserControls.ThongTin
             {
                 MessageBox.Show("Dữ liệu chưa đủ.", "Thông Báo");
                 // bắt lỗi         
-                errorProvider1.SetError(txtMaNCC, "Chưa điền mã nhà cung cấp");
-                errorProvider1.SetError(txtTenNCC, "Chưa điền tên nhà cung cấp");
-                errorProvider1.SetError(txtSDT, "Chưa điền SĐT");
-                errorProvider1.SetError(txtEmail, "Chưa điền email");
-                errorProvider1.SetError(txtDiaChi, "Chưa điền địa chỉ");
+                if (txtMaNCC.Text == "") errorProvider1.SetError(txtMaNCC, "Chưa điền mã nhà cung cấp");
+                if (txtTenNCC.Text == "") errorProvider1.SetError(txtTenNCC, "Chưa điền tên nhà cung cấp");
+                if (txtSDT.Text == "") errorProvider1.SetError(txtSDT, "Chưa điền SĐT");
+                if (txtEmail.Text == "") errorProvider1.SetError(txtEmail, "Chưa điền email");
+                if (txtDiaChi.Text == "") errorProvider1.SetError(txtDiaChi, "Chưa điền địa chỉ");
             }
             else
             {

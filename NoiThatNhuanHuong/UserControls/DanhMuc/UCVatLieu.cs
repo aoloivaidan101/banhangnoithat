@@ -124,8 +124,8 @@ namespace NoiThatNhuanHuong.UserControls.DanhMuc
             {
                 MessageBox.Show("Dữ liệu chưa đủ.", "Thông Báo");
                 // bắt lỗi
-                errorProvider1.SetError(txtMaVatLieu,"Chưa điền mã vật liệu");
-                errorProvider1.SetError(txtTenVatLieu,"Chưa điền tên vật liệu");
+                if (txtMaVatLieu.Text == "") errorProvider1.SetError(txtMaVatLieu, "Chưa điền mã vật liệu");
+                if (txtTenVatLieu.Text == "") errorProvider1.SetError(txtTenVatLieu, "Chưa điền tên vật liệu");
             }
             else
             {

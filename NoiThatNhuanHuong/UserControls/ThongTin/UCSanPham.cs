@@ -138,14 +138,14 @@ namespace NoiThatNhuanHuong.UserControls.ThongTin
         private void btnSave_Click(object sender, EventArgs e)
         {
             errorProvider1.Clear();
-            if (txtMaSP.Text == "" || txtTenSP.Text == "" ||  txtGiaBan.Text==""||txtGiaNhap.Text=="")
+            if (txtMaSP.Text == "" || txtTenSP.Text == "" || txtGiaBan.Text == "" || txtGiaNhap.Text == "")
             {
                 MessageBox.Show("Dữ liệu chưa đủ.", "Thông Báo");
                 // bắt lỗi
-                errorProvider1.SetError(txtMaSP, "Chưa điền mã sản phẩm");
-                errorProvider1.SetError(txtTenSP, "Chưa điền tên sản phẩm");            
-                errorProvider1.SetError(txtGiaNhap, "Chưa điền giá nhập");
-                errorProvider1.SetError(txtGiaBan, "Chưa điền giá bán");
+                if (txtMaSP.Text == "") errorProvider1.SetError(txtMaSP, "Chưa điền mã sản phẩm");
+                if (txtTenSP.Text == "") errorProvider1.SetError(txtTenSP, "Chưa điền tên sản phẩm");
+                if (txtGiaNhap.Text == "") errorProvider1.SetError(txtGiaNhap, "Chưa điền giá nhập");
+                if (txtGiaBan.Text == "") errorProvider1.SetError(txtGiaBan, "Chưa điền giá bán");
             }
             else
             {
@@ -160,7 +160,7 @@ namespace NoiThatNhuanHuong.UserControls.ThongTin
 
                     else
                     {
-                        SQL_ThongTin.Add_SanPham(txtMaSP.Text, txtTenSP.Text, cbbLoaiSP.SelectedValue.ToString(),cbbNCC.SelectedValue.ToString(),decimal.Parse(txtGiaNhap.Text),decimal.Parse(txtGiaBan.Text),0,txtMoTa.Text);
+                        SQL_ThongTin.Add_SanPham(txtMaSP.Text, txtTenSP.Text, cbbLoaiSP.SelectedValue.ToString(), cbbNCC.SelectedValue.ToString(), decimal.Parse(txtGiaNhap.Text), decimal.Parse(txtGiaBan.Text), 0, txtMoTa.Text);
                         BatDau();
                     }
                 }

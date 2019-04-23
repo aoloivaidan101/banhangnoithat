@@ -122,8 +122,9 @@ namespace NoiThatNhuanHuong.UserControls.DanhMuc
             {
                 MessageBox.Show("Dữ liệu chưa đủ.", "Thông Báo");
                 // bắt lỗi
-                errorProvider1.SetError(txtMaChucVu, "Chưa điền mã Chức Vụ");
-                errorProvider1.SetError(txtTenChucVu, "Chưa điền tên Chức Vụ");
+                if (txtMaChucVu.Text == "") errorProvider1.SetError(txtMaChucVu, "Chưa điền mã Chức Vụ");
+                if (txtTenChucVu.Text == "") errorProvider1.SetError(txtTenChucVu, "Chưa điền tên Chức Vụ");
+
             }
             else
             {

@@ -128,13 +128,13 @@ namespace NoiThatNhuanHuong.UserControls.DanhMuc
         private void btnSave_Click(object sender, EventArgs e)
         {
             errorProvider1.Clear();
-            if (txtMaLoaiSP.Text == "" || txtTenLoaiSP.Text == ""|| cbbVatLieu.Text =="" )
+            if (txtMaLoaiSP.Text == "" || txtTenLoaiSP.Text == "" || cbbVatLieu.Text == "")
             {
                 MessageBox.Show("Dữ liệu chưa đủ.", "Thông Báo");
                 // bắt lỗi
-                errorProvider1.SetError(txtMaLoaiSP, "Chưa điền mã loại sản phẩm");
-                errorProvider1.SetError(txtTenLoaiSP, "Chưa điền tên loại sản shẩm");
-                errorProvider1.SetError(cbbVatLieu, "Chưa chọn vật liệu");
+                if (txtMaLoaiSP.Text == "") errorProvider1.SetError(txtMaLoaiSP, "Chưa điền mã loại sản phẩm");
+                if (txtTenLoaiSP.Text == "") errorProvider1.SetError(txtTenLoaiSP, "Chưa điền tên loại sản shẩm");
+                if (cbbVatLieu.Text == "") errorProvider1.SetError(cbbVatLieu, "Chưa chọn vật liệu");
             }
             else
             {
@@ -149,17 +149,18 @@ namespace NoiThatNhuanHuong.UserControls.DanhMuc
 
                     else
                     {
-                        SQL_DanhMuc.Add_LoaiSanPham(txtMaLoaiSP.Text, txtTenLoaiSP.Text,cbbVatLieu.Text);
+                        SQL_DanhMuc.Add_LoaiSanPham(txtMaLoaiSP.Text, txtTenLoaiSP.Text, cbbVatLieu.SelectedValue.ToString());
                         BatDau();
                     }
                 }
                 if (chucnang == 2)// nút sửa
                 {
-                    SQL_DanhMuc.Edit_LoaiSanPham(txtMaLoaiSP.Text, txtTenLoaiSP.Text,cbbVatLieu.Text);
+                    SQL_DanhMuc.Edit_LoaiSanPham(txtMaLoaiSP.Text, txtTenLoaiSP.Text, cbbVatLieu.SelectedValue.ToString());
                     BatDau();
                 }
 
             }
         }
+    
     }
 }
