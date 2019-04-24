@@ -410,6 +410,7 @@
             this.txtSDT.StyleController = this.layoutControl1;
             this.txtSDT.TabIndex = 6;
             this.txtSDT.EditValueChanged += new System.EventHandler(this.txtSDT_EditValueChanged);
+            this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
             // 
             // txtDiaChi
             // 

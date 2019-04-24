@@ -67,7 +67,7 @@ namespace NoiThatNhuanHuong.UserControls.KhoHang.Form_Phieu
 
         private void listView1_MouseClick(object sender, MouseEventArgs e)
         {
-            MessageBox.Show("22");
+         //   MessageBox.Show("22");
         }
     }
 }

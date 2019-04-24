@@ -32,19 +32,15 @@ namespace NoiThatNhuanHuong
             {
                 if (txtTenDangNhap.Text == bang_NguoiDung.Rows[i][2].ToString() && txtMatKhau.Text == bang_NguoiDung.Rows[i][3].ToString())
                 {
-
-                    {
-                        this.Hide();
+                    MessageBox.Show(" Đăng nhập thành công ", "Thông báo");
+                    Temp.NguoiDungID = bang_NguoiDung.Rows[i][0].ToString();
+                    this.Hide();
                         Form1 frm = new Form1();
                         frm.Show();
-
-                    }
-                }
-                else
-                {
-                    MessageBox.Show(" Tài khoản không tồn tại ", "Thông báo");
+                    return;
                 }
             }
+            MessageBox.Show("Lỗi đăng nhập", "Thông báo");
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

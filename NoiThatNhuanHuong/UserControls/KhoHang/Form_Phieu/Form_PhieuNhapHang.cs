@@ -24,6 +24,8 @@ namespace NoiThatNhuanHuong.UserControls.KhoHang.Form_Phieu
             txtDaThanhToan.Text = "0";
             txtDonGia.Text = "0";
             txtTongTien.Text = "0";
+            txtDonGia.Enabled = false;
+            txtThanhTien.Enabled = false;
         }
 
         void display_CBB()

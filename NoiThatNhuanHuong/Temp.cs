@@ -10,5 +10,7 @@ namespace NoiThatNhuanHuong
     {
         public static string Temp_PhieuNhapHangID;
         public static string Temp_HoaDonID;
+        public static string Temp_PhieuNoID;
+        public static string NguoiDungID;
     }
 }

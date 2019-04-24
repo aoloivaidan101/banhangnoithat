@@ -120,11 +120,23 @@
     <Compile Include="UserControls\BanHang\UCDanhSachHoaDon.Designer.cs">
       <DependentUpon>UCDanhSachHoaDon.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\CongNo\Form_ChiTietPhieuNo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\CongNo\Form_ChiTietPhieuNo.Designer.cs">
+      <DependentUpon>Form_ChiTietPhieuNo.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\CongNo\UCPhieuNo.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\CongNo\UCPhieuNo.Designer.cs">
       <DependentUpon>UCPhieuNo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CongNo\UCPhieuTraNo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\CongNo\UCPhieuTraNo.Designer.cs">
+      <DependentUpon>UCPhieuTraNo.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\HeThong\UCNguoiDung.cs">
       <SubType>UserControl</SubType>
@@ -248,8 +260,14 @@
     <EmbeddedResource Include="UserControls\BanHang\UCDanhSachHoaDon.resx">
       <DependentUpon>UCDanhSachHoaDon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\CongNo\Form_ChiTietPhieuNo.resx">
+      <DependentUpon>Form_ChiTietPhieuNo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\CongNo\UCPhieuNo.resx">
       <DependentUpon>UCPhieuNo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\CongNo\UCPhieuTraNo.resx">
+      <DependentUpon>UCPhieuTraNo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\DanhMuc\UCChucVu.resx">
       <DependentUpon>UCChucVu.cs</DependentUpon>

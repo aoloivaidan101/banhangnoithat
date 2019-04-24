@@ -80,7 +80,7 @@ namespace NoiThatNhuanHuong
             using (SqlConnection connection = new SqlConnection(SQL_Connection._SQL))
             {
                 connection.Open();
-                string query = "INSERT INTO NhaCungCap VALUES (@MaNCC,@SDTNCC,@TenNCC,@DiaChi,@Email)";
+                string query = "INSERT INTO NhaCungCap VALUES (@MaNCC,@TenNCC,@DiaChi,@SDTNCC,@Email)";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("MaNCC", MaNCC);
                 command.Parameters.AddWithValue("TenNCC", TenNCC);

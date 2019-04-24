@@ -47,7 +47,8 @@ namespace NoiThatNhuanHuong.UserControls.CongNo
         {
             // lấy mã phiếu nhập
             Temp.Temp_PhieuNhapHangID = gridView1.GetRowCellValue(e.RowHandle, "MaPhieuNhap").ToString();
-            Form_ChiTietNhapHang dlg2 = new Form_ChiTietNhapHang();
+            Temp.Temp_PhieuNoID= gridView1.GetRowCellValue(e.RowHandle, "STT_No").ToString();
+            Form_ChiTietPhieuNo dlg2 = new Form_ChiTietPhieuNo();
             dlg2.ShowDialog();
         }
 
@@ -73,18 +74,24 @@ namespace NoiThatNhuanHuong.UserControls.CongNo
             //load bang
             if (cbbNCC.Text != "" && isLoadDone)
             {
-                gridControl1.DataSource = SQL_CongNo.Display_PhieuNo_Find(cbbNCC.SelectedValue.ToString());
+                DataTable phieuno_NCC = SQL_CongNo.Display_PhieuNo_Find(cbbNCC.SelectedValue.ToString()); ;
+                gridControl1.DataSource = phieuno_NCC;
                 fixHeaderName();
+                /// load thông tin riêng
+                txtSoPhieuNo_NCC.Text = phieuno_NCC.Rows.Count.ToString();
+                int tongtien = 0;
+                for (int i = 0; i < phieuno_NCC.Rows.Count; i++)
+                    tongtien = tongtien + int.Parse(phieuno_NCC.Rows[i][3].ToString());
+                txtTongTien_NCC.Text = tongtien.ToString();
             }      
-            ///// load phiếu 
-            ///// load tổng tiền
-            ///
-            // 
+            
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             cbbNCC.Text = "";
+            txtSoPhieuNo_NCC.Text = "";
+            txtTongTien_NCC.Text = "";
             display();
         }
     }

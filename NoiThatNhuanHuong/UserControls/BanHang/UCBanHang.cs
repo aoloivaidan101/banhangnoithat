@@ -99,14 +99,21 @@ namespace NoiThatNhuanHuong.UserControls.BanHang
             txtMaSP.Text= gridView1.GetRowCellValue(e.RowHandle, "Mã Sản Phẩm").ToString();
             txtTenSP.Text = gridView1.GetRowCellValue(e.RowHandle, "Tên Sản Phẩm").ToString();
             txtDonGia.Text = gridView1.GetRowCellValue(e.RowHandle, "Giá Bán").ToString();
+            temp_soluong= int.Parse(gridView1.GetRowCellValue(e.RowHandle, "Số Lượng").ToString());
             btnAdd.Enabled = true;
             btnDelete.Enabled = false;
             btnEdit.Enabled = false;
         }
-
+        int temp_soluong;
         private void nmrSoLuong_ValueChanged(object sender, EventArgs e)
         {
-            txtThanhTien.Text = (int.Parse(nmrSoLuong.Value.ToString()) * int.Parse(txtDonGia.Text)).ToString();
+            /// báo  hết hàng
+            if(temp_soluong< int.Parse(nmrSoLuong.Value.ToString()))
+            {
+                MessageBox.Show("Không đủ số lượng bán");
+                errorProvider1.SetError(nmrSoLuong, "không đủ số lượng bán");
+            }
+            else txtThanhTien.Text = (int.Parse(nmrSoLuong.Value.ToString()) * int.Parse(txtDonGia.Text)).ToString();
         }
 
         private void txtDonGia_EditValueChanged(object sender, EventArgs e)
@@ -133,11 +140,12 @@ namespace NoiThatNhuanHuong.UserControls.BanHang
         private void btnAdd_Click(object sender, EventArgs e)
         {
             
-            if (nmrSoLuong.Value < 1)
+            if (nmrSoLuong.Value < 1 || temp_soluong < int.Parse(nmrSoLuong.Value.ToString()))
             {
                 ///bắt lỗi
-                MessageBox.Show("Chưa nhập số lượng", "Thông báo");
-                errorProvider1.SetError(nmrSoLuong, "chưa nhập số lượng");
+                MessageBox.Show("Thêm giỏ hàng lỗi", "Thông báo");
+                if(nmrSoLuong.Value < 1) errorProvider1.SetError(nmrSoLuong, "chưa nhập số lượng");
+                if(temp_soluong < int.Parse(nmrSoLuong.Value.ToString())) errorProvider1.SetError(nmrSoLuong, "không đủ số lượng bán");
             }
             else
             {              
@@ -313,6 +321,12 @@ namespace NoiThatNhuanHuong.UserControls.BanHang
             printTool.ShowPreviewDialog();
         }
 
-      
+        private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

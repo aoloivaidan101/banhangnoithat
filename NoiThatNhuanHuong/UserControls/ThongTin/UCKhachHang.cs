@@ -81,7 +81,7 @@ namespace NoiThatNhuanHuong.UserControls.ThongTin
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-           // chucnang = 2;
+            chucnang = 2;
             // button
             btnAdd.Enabled = false;
             btnEdit.Enabled = false;
@@ -137,16 +137,24 @@ namespace NoiThatNhuanHuong.UserControls.ThongTin
                 if (chucnang == 1) // Nút thêm
                 {
                     {
-                        SQL_ThongTin.Add_KhachHang(txtTenKhachHang.Text, txtSDT.Text,txtDiaChi.Text,txtEmail.Text);
+                        SQL_ThongTin.Add_KhachHang(txtSDT.Text,txtTenKhachHang.Text,txtDiaChi.Text,txtEmail.Text);
                         BatDau();
                     }
                 }
                 if (chucnang == 2)// nút sửa
                 {
-                    SQL_ThongTin.Edit__KhachHang(txtMaKhachHang.Text, txtTenKhachHang.Text, txtSDT.Text, txtDiaChi.Text, txtEmail.Text);
+                    SQL_ThongTin.Edit__KhachHang(txtMaKhachHang.Text, txtSDT.Text, txtTenKhachHang.Text,txtDiaChi.Text, txtEmail.Text);
                     BatDau();
                 }
 
+            }
+        }
+
+        private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

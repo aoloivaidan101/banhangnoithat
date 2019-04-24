@@ -31,7 +31,7 @@ namespace NoiThatNhuanHuong
             using (SqlConnection connection = new SqlConnection(SQL_Connection._SQL))
             {
                 connection.Open();
-                string query = "SELECT * FROM NhapKho";
+                string query = "SELECT NhapKho.MaPhieuNhap,NhanVien.TenNV,NhapKho.NgayNhap,TongTien,DaThanhToan FROM NhapKho join NhanVien on NhanVien.MaNV=NhapKho.MaNV";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.ExecuteNonQuery();
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
@@ -47,7 +47,7 @@ namespace NoiThatNhuanHuong
             using (SqlConnection connection = new SqlConnection(SQL_Connection._SQL))
             {
                 connection.Open();
-                string query = "SELECT ChiTietNhapKho.MaChitietNhapKho,MaPhieuNhap,SanPham.TenSP,ChiTietNhapKho.SoLuongNhap,SanPham.GiaBan,ChiTietNhapKho.ThanhTien FROM ChiTietNhapKho join SanPham on SanPham.MaSP=ChiTietNhapKho.MaSP where ChiTietNhapKho.MaPhieuNhap ='"+code+"'";
+                string query = "SELECT ChiTietNhapKho.MaChitietNhapKho,MaPhieuNhap,SanPham.TenSP,ChiTietNhapKho.SoLuongNhap,SanPham.GiaNhap,ChiTietNhapKho.ThanhTien FROM ChiTietNhapKho join SanPham on SanPham.MaSP=ChiTietNhapKho.MaSP where ChiTietNhapKho.MaPhieuNhap ='" + code+"'";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.ExecuteNonQuery();
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(command);

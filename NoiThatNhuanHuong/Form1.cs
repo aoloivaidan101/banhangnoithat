@@ -256,14 +256,14 @@ namespace NoiThatNhuanHuong
         {
             UserControls.KhoHang.UCKhoHang khohang = new UserControls.KhoHang.UCKhoHang();
             DevExpress.XtraTab.XtraTabPage tabkhohang = new DevExpress.XtraTab.XtraTabPage();
-            tabkhohang.Name = "tabNguoiDung";
-            tabkhohang.Text = "Người Dùng";
+            tabkhohang.Name = "tabKhoHang";
+            tabkhohang.Text = "Kho Hàng";
             tabkhohang.Controls.Add(khohang);
             khohang.Dock = DockStyle.Fill;
             int t = 0;
             foreach (DevExpress.XtraTab.XtraTabPage tab in xtabHienThi.TabPages)
             {
-                if (tab.Text == "Người Dùng")
+                if (tab.Text == "Kho Hàng")
                 {
                     xtabHienThi.SelectedTabPage = tab;
                     t = 1;
@@ -375,6 +375,36 @@ namespace NoiThatNhuanHuong
                 xtabHienThi.TabPages.Add(tabPhieuno);
                 xtabHienThi.SelectedTabPage = tabPhieuno;
             }
+        }
+
+        private void btnPhieuTraNo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            UserControls.CongNo.UCPhieuTraNo PhieuTraNo = new UserControls.CongNo.UCPhieuTraNo();
+            DevExpress.XtraTab.XtraTabPage tabPhieuTraNo = new DevExpress.XtraTab.XtraTabPage();
+            tabPhieuTraNo.Name = "tabPhieuTrano";
+            tabPhieuTraNo.Text = "Phiếu trả nợ";
+            tabPhieuTraNo.Controls.Add(PhieuTraNo);
+            PhieuTraNo.Dock = DockStyle.Fill;
+            int t = 0;
+            foreach (DevExpress.XtraTab.XtraTabPage tab in xtabHienThi.TabPages)
+            {
+                if (tab.Text == "Phiếu trả nợ")
+                {
+                    xtabHienThi.SelectedTabPage = tab;
+                    t = 1;
+                }
+            }
+            if (t == 1) { }
+            else
+            {
+                xtabHienThi.TabPages.Add(tabPhieuTraNo);
+                xtabHienThi.SelectedTabPage = tabPhieuTraNo;
+            }
+        }
+
+        private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
         }
     }
 }

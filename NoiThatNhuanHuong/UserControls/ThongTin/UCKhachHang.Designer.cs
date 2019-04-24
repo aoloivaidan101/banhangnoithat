@@ -149,6 +149,7 @@
             this.txtSDT.Size = new System.Drawing.Size(250, 20);
             this.txtSDT.StyleController = this.layoutControl1;
             this.txtSDT.TabIndex = 8;
+            this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
             // 
             // txtMaKhachHang
             // 
