@@ -74,7 +74,7 @@ namespace NoiThatNhuanHuong.UserControls.HeThong
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            BatDau();
+        //    BatDau();
             chucnang = 2;
             // button
             btnAdd.Enabled = false;
@@ -126,15 +126,17 @@ namespace NoiThatNhuanHuong.UserControls.HeThong
             {
                 MessageBox.Show("Dữ liệu chưa đủ.", "Thông Báo");
                 // bắt lỗi
-                errorProvider1.SetError(txtMaNguoiDung, "Chưa điền mã người dùng");
-                errorProvider1.SetError(txtMatKhau, "Chưa điền mật khẩu");            
+                if(txtHoTen.Text=="") errorProvider1.SetError(txtHoTen, "Chưa điền tên.");
+                if (txtTenDangNhap.Text == "") errorProvider1.SetError(txtTenDangNhap, "Chưa điền tên đăng nhập");
+                if (txtMatKhau.Text == "") errorProvider1.SetError(txtMatKhau, "Chưa điền mật khẩu");            
             }
             else
             {
                 if (chucnang == 1) // Nút thêm
                 {                
                         SQL_HeThong.Add_NguoiDung(txtHoTen.Text,txtTenDangNhap.Text, txtMatKhau.Text);
-                        SQL_HeThong.Add_PhanQuyen(int.Parse(txtMaNguoiDung.Text),false,false,false,false,false,false,false);
+                    /// lấy mã người dùng để add phân quyền
+                     //   SQL_HeThong.Add_PhanQuyen(int.Parse(txtMaNguoiDung.Text),false,false,false,false,false,false,false);
                         BatDau();
                 }
                 if (chucnang == 2)// nút sửa
@@ -142,7 +144,6 @@ namespace NoiThatNhuanHuong.UserControls.HeThong
                     SQL_HeThong.Edit__NguoiDung(int.Parse(txtMaNguoiDung.Text), txtHoTen.Text,txtTenDangNhap.Text, txtMatKhau.Text);
                     BatDau();
                 }
-
             }
         }
 

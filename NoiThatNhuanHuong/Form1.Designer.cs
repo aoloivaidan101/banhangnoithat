@@ -98,6 +98,7 @@
             this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup15 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtabHienThi)).BeginInit();
             this.SuspendLayout();
@@ -148,10 +149,12 @@
             this.barButtonItem39,
             this.barButtonItem1,
             this.barButtonItem2,
-            this.barButtonItem3});
+            this.barButtonItem3,
+            this.barButtonItem4});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 46;
+            this.ribbonControl1.MaxItemId = 47;
             this.ribbonControl1.Name = "ribbonControl1";
+            this.ribbonControl1.PageHeaderItemLinks.Add(this.barButtonItem4);
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
             this.ribbonPage2,
@@ -332,6 +335,7 @@
             this.btnPhieuNo.Name = "btnPhieuNo";
             this.btnPhieuNo.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnPhieuNo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPhieuNo_ItemClick);
             // 
             // btnPhieuTraNo
             // 
@@ -617,7 +621,6 @@
             // ribbonPageGroup5
             // 
             this.ribbonPageGroup5.AllowTextClipping = false;
-            this.ribbonPageGroup5.ItemLinks.Add(this.barButtonItem1);
             this.ribbonPageGroup5.ItemLinks.Add(this.btnPhieuNo);
             this.ribbonPageGroup5.ItemLinks.Add(this.btnPhieuTraNo);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
@@ -685,7 +688,7 @@
             // 
             // xtabHienThi
             // 
-            this.xtabHienThi.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InActiveTabPageHeaderAndOnMouseHover;
+            this.xtabHienThi.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InActiveTabPageHeader;
             this.xtabHienThi.Dock = System.Windows.Forms.DockStyle.Fill;
             this.xtabHienThi.Location = new System.Drawing.Point(0, 143);
             this.xtabHienThi.Name = "xtabHienThi";
@@ -709,6 +712,13 @@
             // ribbonPageGroup15
             // 
             this.ribbonPageGroup15.Name = "ribbonPageGroup15";
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "barButtonItem4";
+            this.barButtonItem4.Id = 46;
+            this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
+            this.barButtonItem4.Name = "barButtonItem4";
             // 
             // Form1
             // 
@@ -802,6 +812,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup19;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
     }
 }
 

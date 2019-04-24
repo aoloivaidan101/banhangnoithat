@@ -58,6 +58,7 @@ namespace NoiThatNhuanHuong.UserControls.KhoHang
         private void btnDelete_Click(object sender, EventArgs e)
         {
             SQL_KhoHang.Delete_PhieuNhapHang(Temp.Temp_PhieuNhapHangID);
+            display();
         }
     }
 }

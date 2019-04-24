@@ -103,11 +103,9 @@
             this.layoutControl3 = new DevExpress.XtraLayout.LayoutControl();
             this.btnLamMoi = new DevExpress.XtraEditors.SimpleButton();
             this.btnThanhToan = new DevExpress.XtraEditors.SimpleButton();
-            this.btnInHoaDon = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).BeginInit();
@@ -182,7 +180,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -580,6 +577,7 @@
             this.ThanhTien});
             this.listView1.Dock = System.Windows.Forms.DockStyle.Top;
             this.listView1.FullRowSelect = true;
+            this.listView1.GridLines = true;
             this.listView1.Location = new System.Drawing.Point(2, 20);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(557, 355);
@@ -914,9 +912,9 @@
             // groupControl5
             // 
             this.groupControl5.Controls.Add(this.layoutControl3);
-            this.groupControl5.Location = new System.Drawing.Point(619, 501);
+            this.groupControl5.Location = new System.Drawing.Point(622, 501);
             this.groupControl5.Name = "groupControl5";
-            this.groupControl5.Size = new System.Drawing.Size(319, 87);
+            this.groupControl5.Size = new System.Drawing.Size(304, 87);
             this.groupControl5.TabIndex = 15;
             this.groupControl5.Text = "Thực Hiện";
             // 
@@ -924,13 +922,12 @@
             // 
             this.layoutControl3.Controls.Add(this.btnLamMoi);
             this.layoutControl3.Controls.Add(this.btnThanhToan);
-            this.layoutControl3.Controls.Add(this.btnInHoaDon);
             this.layoutControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl3.Location = new System.Drawing.Point(2, 20);
             this.layoutControl3.Name = "layoutControl3";
             this.layoutControl3.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1079, 387, 450, 400);
             this.layoutControl3.Root = this.layoutControlGroup3;
-            this.layoutControl3.Size = new System.Drawing.Size(315, 65);
+            this.layoutControl3.Size = new System.Drawing.Size(300, 65);
             this.layoutControl3.TabIndex = 0;
             this.layoutControl3.Text = "layoutControl3";
             // 
@@ -939,7 +936,7 @@
             this.btnLamMoi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLamMoi.ImageOptions.Image")));
             this.btnLamMoi.Location = new System.Drawing.Point(12, 12);
             this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(83, 38);
+            this.btnLamMoi.Size = new System.Drawing.Size(97, 38);
             this.btnLamMoi.StyleController = this.layoutControl3;
             this.btnLamMoi.TabIndex = 4;
             this.btnLamMoi.Text = "Làm mới";
@@ -948,23 +945,13 @@
             // btnThanhToan
             // 
             this.btnThanhToan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThanhToan.ImageOptions.Image")));
-            this.btnThanhToan.Location = new System.Drawing.Point(202, 12);
+            this.btnThanhToan.Location = new System.Drawing.Point(113, 12);
             this.btnThanhToan.Name = "btnThanhToan";
-            this.btnThanhToan.Size = new System.Drawing.Size(101, 38);
+            this.btnThanhToan.Size = new System.Drawing.Size(175, 38);
             this.btnThanhToan.StyleController = this.layoutControl3;
             this.btnThanhToan.TabIndex = 7;
-            this.btnThanhToan.Text = "Thanh toán";
+            this.btnThanhToan.Text = "Tạo và In hóa đơn";
             this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
-            // 
-            // btnInHoaDon
-            // 
-            this.btnInHoaDon.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnInHoaDon.ImageOptions.Image")));
-            this.btnInHoaDon.Location = new System.Drawing.Point(99, 12);
-            this.btnInHoaDon.Name = "btnInHoaDon";
-            this.btnInHoaDon.Size = new System.Drawing.Size(99, 38);
-            this.btnInHoaDon.StyleController = this.layoutControl3;
-            this.btnInHoaDon.TabIndex = 8;
-            this.btnInHoaDon.Text = "In Hóa đơn";
             // 
             // layoutControlGroup3
             // 
@@ -972,11 +959,10 @@
             this.layoutControlGroup3.GroupBordersVisible = false;
             this.layoutControlGroup3.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem8,
-            this.layoutControlItem11,
-            this.layoutControlItem9});
+            this.layoutControlItem11});
             this.layoutControlGroup3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup3.Name = "Root";
-            this.layoutControlGroup3.Size = new System.Drawing.Size(315, 65);
+            this.layoutControlGroup3.Size = new System.Drawing.Size(300, 65);
             this.layoutControlGroup3.TextVisible = false;
             // 
             // layoutControlItem8
@@ -984,28 +970,18 @@
             this.layoutControlItem8.Control = this.btnLamMoi;
             this.layoutControlItem8.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(87, 45);
+            this.layoutControlItem8.Size = new System.Drawing.Size(101, 45);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
             // layoutControlItem11
             // 
             this.layoutControlItem11.Control = this.btnThanhToan;
-            this.layoutControlItem11.Location = new System.Drawing.Point(190, 0);
+            this.layoutControlItem11.Location = new System.Drawing.Point(101, 0);
             this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(105, 45);
+            this.layoutControlItem11.Size = new System.Drawing.Size(179, 45);
             this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem11.TextVisible = false;
-            // 
-            // layoutControlItem9
-            // 
-            this.layoutControlItem9.Control = this.btnInHoaDon;
-            this.layoutControlItem9.Location = new System.Drawing.Point(87, 0);
-            this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(103, 45);
-            this.layoutControlItem9.Text = "In hóa đơn";
-            this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem9.TextVisible = false;
             // 
             // errorProvider1
             // 
@@ -1099,7 +1075,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
@@ -1172,8 +1147,6 @@
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup6;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem19;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
-        private DevExpress.XtraEditors.SimpleButton btnInHoaDon;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private System.Windows.Forms.Panel panel4;
         private DevExpress.XtraEditors.SimpleButton btnDelete;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem20;

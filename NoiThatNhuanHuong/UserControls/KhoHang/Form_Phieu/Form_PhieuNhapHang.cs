@@ -208,6 +208,13 @@ namespace NoiThatNhuanHuong.UserControls.KhoHang.Form_Phieu
                 {
                     SQL_KhoHang.Add_ChiTietNhapHang(Temp_PhieuNhapHang, listView1.Items[i].SubItems[1].Text, int.Parse(listView1.Items[i].SubItems[3].Text), decimal.Parse(listView1.Items[i].SubItems[5].Text));                 
                 }
+
+                /// add vào bảng nợ nếu  chưa thanh toán
+                if(int.Parse(txtTongTien.Text) > int.Parse(txtDaThanhToan.Text))
+                {
+                    decimal tienno = decimal.Parse(txtTongTien.Text) - decimal.Parse(txtDaThanhToan.Text);
+                    SQL_CongNo.Add_PhieuNo(Temp_PhieuNhapHang,tienno,false);
+                }
                 MessageBox.Show("Thêm Hóa đơn thành công.");
                 reset();
             }

@@ -81,7 +81,7 @@ namespace NoiThatNhuanHuong.UserControls.ThongTin
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            chucnang = 2;
+           // chucnang = 2;
             // button
             btnAdd.Enabled = false;
             btnEdit.Enabled = false;

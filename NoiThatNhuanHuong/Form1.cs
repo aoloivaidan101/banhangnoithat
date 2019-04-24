@@ -331,7 +331,7 @@ namespace NoiThatNhuanHuong
         {
             UserControls.BanHang.UCDanhSachHoaDon List_HoaDon = new UserControls.BanHang.UCDanhSachHoaDon();
             DevExpress.XtraTab.XtraTabPage tablisthoadon= new DevExpress.XtraTab.XtraTabPage();
-            tablisthoadon.Name = "tabDánhachhoadon";
+            tablisthoadon.Name = "tabDanhsachhoadon";
             tablisthoadon.Text = "Danh Sách Hóa Đơn";
             tablisthoadon.Controls.Add(List_HoaDon);
             List_HoaDon.Dock = DockStyle.Fill;
@@ -349,6 +349,31 @@ namespace NoiThatNhuanHuong
             {
                 xtabHienThi.TabPages.Add(tablisthoadon);
                 xtabHienThi.SelectedTabPage = tablisthoadon;
+            }
+        }
+
+        private void btnPhieuNo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            UserControls.CongNo.UCPhieuNo PhieuNo = new UserControls.CongNo.UCPhieuNo();
+            DevExpress.XtraTab.XtraTabPage tabPhieuno = new DevExpress.XtraTab.XtraTabPage();
+            tabPhieuno.Name = "tabPhieuno";
+            tabPhieuno.Text = "Phiếu nợ";
+            tabPhieuno.Controls.Add(PhieuNo);
+            PhieuNo.Dock = DockStyle.Fill;
+            int t = 0;
+            foreach (DevExpress.XtraTab.XtraTabPage tab in xtabHienThi.TabPages)
+            {
+                if (tab.Text == "Phiếu nợ")
+                {
+                    xtabHienThi.SelectedTabPage = tab;
+                    t = 1;
+                }
+            }
+            if (t == 1) { }
+            else
+            {
+                xtabHienThi.TabPages.Add(tabPhieuno);
+                xtabHienThi.SelectedTabPage = tabPhieuno;
             }
         }
     }

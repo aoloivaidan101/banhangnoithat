@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NoiThatNhuanHuong.UserControls.XReport;
+using DevExpress.XtraReports.UI;
 
 namespace NoiThatNhuanHuong.UserControls.BanHang
 {
@@ -250,12 +252,14 @@ namespace NoiThatNhuanHuong.UserControls.BanHang
         {
             string MaKH;
             string MaHD;
-            if (txtSDT.Text == "" || txtTenKH.Text == "" || txtMaNV.Text == "" || int.Parse(txtTongTien.Text) < 1)
+            if (txtSDT.Text == "" || txtTenKH.Text == "" ||txtEmail.Text==""||txtDiaChi.Text==""|| txtMaNV.Text == "" || int.Parse(txtTongTien.Text) < 1)
             {
                 /// báo lỗi
                  MessageBox.Show("Lỗi dữ liệu.","Thông báo");
                 if (txtTenKH.Text == "") errorProvider1.SetError(txtTenKH, "chưa điền tên khách hàng.");
-                if (txtSDT.Text == "") errorProvider1.SetError(txtSDT, "chưa điền sđt khách hàng.");             
+                if (txtSDT.Text == "") errorProvider1.SetError(txtSDT, "chưa điền sđt khách hàng.");
+                if (txtDiaChi.Text == "") errorProvider1.SetError(txtDiaChi, "chưa điền địa chỉ.");
+                if (txtEmail.Text == "") errorProvider1.SetError(txtEmail, "chưa điền email.");
                 if (txtMaNV.Text == "") errorProvider1.SetError(cbbNhanVien, "chưa chọn nhân viên.");
                 if (int.Parse(txtTongTien.Text) < 1) errorProvider1.SetError(txtTongTien, "Chưa có thông tin mặt hàng.");
                 return;
@@ -265,15 +269,7 @@ namespace NoiThatNhuanHuong.UserControls.BanHang
                 /// lưu thông tin khách hàng
                 if (khachhangcu == false)
                 {
-                    //if (txtSDT.Text == "" || txtTenKH.Text == "")
-                    //{
-                    //    MessageBox.Show("Thiếu thông tin khách hàng.");
-                    //    if (txtTenKH.Text == "") errorProvider1.SetError(txtTenKH, "chưa điền tên khách hàng.");
-                    //    if (txtSDT.Text == "") errorProvider1.SetError(txtSDT, "chưa điền sđt khách hàng.");
-                    //    return;
-                    //}
-                    //else
-                    //{   /// add
+                        /// add
                         SQL_ThongTin.Add_KhachHang(txtSDT.Text, txtTenKH.Text, txtDiaChi.Text, txtEmail.Text);
                         /// lấy ra mã khách hàng của thằng khách hàng vừa add (ở vị trí cuối cùng)
                         DataTable khachhang = SQL_ThongTin.Display_KhachHang();
@@ -287,15 +283,7 @@ namespace NoiThatNhuanHuong.UserControls.BanHang
                 }
 
                 /// lưu thông tin hóa đơn
-                //if (txtMaNV.Text == "" || int.Parse(txtTongTien.Text) < 1)
-                //{
-                //    MessageBox.Show("Thiếu thông tin hóa đơn.");
-                //    if (txtMaNV.Text == "") errorProvider1.SetError(cbbNhanVien, "chưa chọn nhân viên.");
-                //    if (int.Parse(txtTongTien.Text) < 1) errorProvider1.SetError(txtTongTien, "Chưa có thông tin mặt hàng.");
-                //    return;
-                //}
-                //else
-                //{   /// Add
+                      /// Add
                     SQL_BanHang.Add_HoaDon(txtMaNV.Text, MaKH, DateTime.Now.ToString("yyyy-MM-dd"), decimal.Parse(txtTongTien.Text));
                     /// lấy ra mã hóa đơn  vừa add (ở vị trí cuối cùng)
                     DataTable hoadon = SQL_BanHang.Display_HoaDon();
@@ -308,6 +296,23 @@ namespace NoiThatNhuanHuong.UserControls.BanHang
                 }
             }
             MessageBox.Show("Thêm Hóa đơn thành công.");
+
+            /// In Hoa Don
+            gridView1.BestFitColumns();
+            HoaDonBanHang report = new HoaDonBanHang();
+            report.ListViewControl = listView1;
+            // set thuộc tính
+            string ngaythang = "Ngày " + DateTime.Now.Day.ToString() + " tháng " + DateTime.Now.Month.ToString() + " năm " + DateTime.Now.Year.ToString();
+            report.SetProperties(cbbNhanVien.Text,MaHD,MaKH,txtTenKH.Text,txtSDT.Text,txtEmail.Text,txtDiaChi.Text,txtTongTien.Text,ngaythang);
+
+            //thu nhỏ hóa đơn
+            report.PaperKind = System.Drawing.Printing.PaperKind.Statement;
+            report.Landscape = true;
+
+            ReportPrintTool printTool = new ReportPrintTool(report);
+            printTool.ShowPreviewDialog();
         }
+
+      
     }
 }

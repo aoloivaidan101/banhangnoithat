@@ -65,7 +65,7 @@ namespace NoiThatNhuanHuong.UserControls.DanhMuc
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            BatDau();
+           // BatDau();
             chucnang = 2;
             // button
             btnAdd.Enabled = false;

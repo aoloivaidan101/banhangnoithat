@@ -120,6 +120,12 @@
     <Compile Include="UserControls\BanHang\UCDanhSachHoaDon.Designer.cs">
       <DependentUpon>UCDanhSachHoaDon.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\CongNo\UCPhieuNo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\CongNo\UCPhieuNo.Designer.cs">
+      <DependentUpon>UCPhieuNo.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\HeThong\UCNguoiDung.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -210,6 +216,12 @@
     <Compile Include="UserControls\ThongTin\UCSanPham.Designer.cs">
       <DependentUpon>UCSanPham.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\XReport\HoaDonBanHang.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\XReport\HoaDonBanHang.Designer.cs">
+      <DependentUpon>HoaDonBanHang.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Dang_nhap.resx">
       <DependentUpon>Dang_nhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -235,6 +247,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\BanHang\UCDanhSachHoaDon.resx">
       <DependentUpon>UCDanhSachHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\CongNo\UCPhieuNo.resx">
+      <DependentUpon>UCPhieuNo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\DanhMuc\UCChucVu.resx">
       <DependentUpon>UCChucVu.cs</DependentUpon>
@@ -281,6 +296,9 @@
     <EmbeddedResource Include="UserControls\ThongTin\UCSanPham.resx">
       <DependentUpon>UCSanPham.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\XReport\HoaDonBanHang.resx">
+      <DependentUpon>HoaDonBanHang.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="App.Config">
       <SubType>Designer</SubType>
     </None>
@@ -297,7 +315,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="UserControls\BaoCaoThongKe\" />
-    <Folder Include="UserControls\CongNo\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
