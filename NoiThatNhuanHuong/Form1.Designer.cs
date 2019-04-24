@@ -72,6 +72,7 @@
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -98,7 +99,6 @@
             this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup15 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtabHienThi)).BeginInit();
             this.SuspendLayout();
@@ -152,6 +152,7 @@
             this.barButtonItem3,
             this.barButtonItem4});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
+            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ribbonControl1.MaxItemId = 47;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.PageHeaderItemLinks.Add(this.barButtonItem4);
@@ -164,7 +165,7 @@
             this.ribbonPage6,
             this.ribbonPage7});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010;
-            this.ribbonControl1.Size = new System.Drawing.Size(1325, 143);
+            this.ribbonControl1.Size = new System.Drawing.Size(1546, 179);
             // 
             // btnNguoiDung
             // 
@@ -435,7 +436,7 @@
             // 
             // btnTKLoiNhuan
             // 
-            this.btnTKLoiNhuan.Caption = "Thống Kê Lợi Nhuận";
+            this.btnTKLoiNhuan.Caption = "Thống kê Tài Chính";
             this.btnTKLoiNhuan.Id = 35;
             this.btnTKLoiNhuan.Name = "btnTKLoiNhuan";
             this.btnTKLoiNhuan.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
@@ -523,6 +524,13 @@
             this.barButtonItem3.Name = "barButtonItem3";
             this.barButtonItem3.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "barButtonItem4";
+            this.barButtonItem4.Id = 46;
+            this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
+            this.barButtonItem4.Name = "barButtonItem4";
             // 
             // ribbonPage1
             // 
@@ -639,16 +647,12 @@
             // ribbonPageGroup6
             // 
             this.ribbonPageGroup6.ItemLinks.Add(this.btnTKKhoHang);
-            this.ribbonPageGroup6.ItemLinks.Add(this.btnTKNhapHang);
-            this.ribbonPageGroup6.ItemLinks.Add(this.btnThongKeXuatHang);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             this.ribbonPageGroup6.Text = "Kho Hàng";
             // 
             // ribbonPageGroup16
             // 
             this.ribbonPageGroup16.ItemLinks.Add(this.btnTKLoiNhuan);
-            this.ribbonPageGroup16.ItemLinks.Add(this.btnTKDoanhThu);
-            this.ribbonPageGroup16.ItemLinks.Add(this.btnTKChiTieu);
             this.ribbonPageGroup16.Name = "ribbonPageGroup16";
             this.ribbonPageGroup16.Text = "Thu - Chi";
             // 
@@ -662,9 +666,8 @@
             // ribbonPageGroup18
             // 
             this.ribbonPageGroup18.ItemLinks.Add(this.barButtonItem2);
-            this.ribbonPageGroup18.ItemLinks.Add(this.barButtonItem3);
             this.ribbonPageGroup18.Name = "ribbonPageGroup18";
-            this.ribbonPageGroup18.Text = "ribbonPageGroup18";
+            this.ribbonPageGroup18.Text = "Công Nợ";
             // 
             // ribbonPage7
             // 
@@ -690,9 +693,10 @@
             // 
             this.xtabHienThi.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InActiveTabPageHeader;
             this.xtabHienThi.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtabHienThi.Location = new System.Drawing.Point(0, 143);
+            this.xtabHienThi.Location = new System.Drawing.Point(0, 179);
+            this.xtabHienThi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtabHienThi.Name = "xtabHienThi";
-            this.xtabHienThi.Size = new System.Drawing.Size(1325, 571);
+            this.xtabHienThi.Size = new System.Drawing.Size(1546, 700);
             this.xtabHienThi.TabIndex = 1;
             this.xtabHienThi.CloseButtonClick += new System.EventHandler(this.xtabHienThi_CloseButtonClick);
             // 
@@ -713,21 +717,15 @@
             // 
             this.ribbonPageGroup15.Name = "ribbonPageGroup15";
             // 
-            // barButtonItem4
-            // 
-            this.barButtonItem4.Caption = "barButtonItem4";
-            this.barButtonItem4.Id = 46;
-            this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
-            this.barButtonItem4.Name = "barButtonItem4";
-            // 
             // Form1
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1325, 714);
+            this.ClientSize = new System.Drawing.Size(1546, 879);
             this.Controls.Add(this.xtabHienThi);
             this.Controls.Add(this.ribbonControl1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.Ribbon = this.ribbonControl1;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
